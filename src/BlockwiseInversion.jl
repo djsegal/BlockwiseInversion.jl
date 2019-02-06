@@ -10,8 +10,7 @@ module BlockwiseInversion
   @reexport using SparseArrays
 
   import Base: length, \, size
-  import Base: getindex, setindex!, lastindex
-  import Base: println, show, display
+  import Base: getindex, setindex!
 
   import LinearAlgebra: rank
 

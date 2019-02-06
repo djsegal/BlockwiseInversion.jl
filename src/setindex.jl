@@ -19,12 +19,3 @@ function setindex!(cur_matrix::FourBlockMatrix,cur_value::Any,i::Int,j::Int)
     end
   end
 end
-
-# setindex!(cur_matrix::FourBlockMatrix,cur_value::Any,i_range::UnitRange,j::Int) =
-#   foreach(i -> setindex!(cur_matrix,cur_value,i,j), i_range)
-
-# setindex!(cur_matrix::FourBlockMatrix,cur_value::Any,i::Int,j_range::UnitRange) =
-#   foreach(j -> setindex!(cur_matrix,cur_value,i,j), j_range)
-
-# setindex!(cur_matrix::FourBlockMatrix,cur_value::Any,i_range::UnitRange,j_range::UnitRange) =
-#   foreach(j -> setindex!(cur_matrix,cur_value,i_range,j), j_range)

@@ -8,13 +8,13 @@ function \(cur_matrix::FourBlockMatrix, cur_vector::Vector)
   top_b = view(cur_vector, 1:cur_matrix.n)
   bot_b = view(cur_vector, cur_matrix.n .+ (1:cur_matrix.m) )
 
-
   cur_lu = lu(A)
-
   F = SharedArray{Float64}(cur_matrix.m,cur_matrix.m)
 
   @sync @distributed for j = 1:size(B,2)
-    F[:,j] = C * ( A \ B[:,j] )
+    tmp_B = B[:,j]
+    isempty(tmp_B) && continue
+    F[:,j] = C * ( cur_lu \ Vector(tmp_B) )
   end
 
   G = D - F

@@ -30,8 +30,6 @@ using Test
 
   for n in 0:10:t
 
-    println(10000000+n)
-
     m = t - n
     d = 1
 
