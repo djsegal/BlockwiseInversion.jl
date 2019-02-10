@@ -25,5 +25,4 @@ module BlockwiseInversion
   include("ldiv.jl")
   include("get_sub_matrices.jl")
 
-
 end
